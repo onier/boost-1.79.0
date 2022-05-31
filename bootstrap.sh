@@ -392,7 +392,8 @@ option.set includedir : $INCLUDEDIR ;
 # Stop on first error
 option.set keep-going : false ;
 EOF
-
+sed -i 's/using gcc ;/using gcc : arm : arm-linux-gnueabihf-g++ ;/g' project-config.jam
+#./bjam install toolset=gcc-arm --prefix=/usr/arm
 cat << EOF
 
 Bootstrapping is done. To build, run:
